@@ -303,12 +303,12 @@ class TicketView extends StatelessWidget {
 
 class TicketData extends StatelessWidget {
   const TicketData({
-    Key? key,
+    super.key,
     required this.textBig1,
     required this.textBig2,
     required this.textSmall1,
     required this.textSmall2,
-  }) : super(key: key);
+  });
 
   final String textBig1;
   final String textBig2;

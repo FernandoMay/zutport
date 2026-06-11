@@ -24,10 +24,10 @@ class AppIconText extends StatelessWidget {
   final IconData icon;
   final String text;
   const AppIconText({
-    Key? key,
+    super.key,
     required this.icon,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +57,11 @@ class AppDoubleTextWidget extends StatelessWidget {
   final String bigText;
   final VoidCallback? ontap;
   const AppDoubleTextWidget({
-    Key? key,
+    super.key,
     required this.smallText,
     required this.bigText,
     this.ontap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -90,11 +90,11 @@ class AppTicketTab extends StatelessWidget {
   final Size size;
 
   const AppTicketTab({
-    Key? key,
+    super.key,
     required this.size,
     required this.text1,
     required this.text2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

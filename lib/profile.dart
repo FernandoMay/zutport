@@ -151,7 +151,7 @@ class ProfileScreen extends StatelessWidget {
                           style: Style.headLineStyle2.copyWith(
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
-                            color: Colors.white.withOpacity(.9),
+                            color: Colors.white.withValues(alpha: .9),
                           ),
                         ),
                       ],
@@ -243,12 +243,12 @@ class RowData extends StatelessWidget {
   final String smallText2;
 
   const RowData({
-    Key? key,
+    super.key,
     required this.bigText1,
     required this.bigText2,
     required this.smallText1,
     required this.smallText2,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

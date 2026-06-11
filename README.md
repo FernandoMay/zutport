@@ -1,16 +1,36 @@
-# zutlemane
+# Zutlemane - Travel Booking App
 
-A new Flutter project.
+A travel booking application built with Flutter and GetX.
+
+## Features
+
+- Flight search and booking
+- Hotel browsing
+- Ticket management with barcodes
+- User profile with miles tracking
+- Bottom navigation with 4 screens
+
+## Architecture
+
+- **State Management:** GetX
+- **UI:** Custom widgets with theme support
+- **Data:** Hardcoded seed data
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone the repository
+2. Run `flutter pub get`
+3. Run `flutter run`
 
-A few resources to get you started if this is your first Flutter project:
+## Testing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+flutter test
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build
+
+```bash
+flutter build apk
+flutter build ios
+```
