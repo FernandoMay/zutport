@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ticket Detail - Zutport</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#27c38a",
+                        "on-secondary-container": "#684000",
+                        "secondary-fixed": "#ffddb8",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-surface-variant": "#444651",
+                        "on-secondary-fixed": "#2a1700",
+                        "primary-container": "#1e3a8a",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#00311f",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-tertiary-fixed": "#002113",
+                        "outline-variant": "#c5c5d3",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#90a8ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e5eeff",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4059aa",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "secondary": "#855300",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-fixed": "#00164e",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "background": "#f8f9ff",
+                        "secondary-container": "#fea619",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00236f",
+                        "on-surface": "#0b1c30",
+                        "tertiary-container": "#004a31",
+                        "on-primary-fixed-variant": "#264191",
+                        "outline": "#757682"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "container-padding": "24px",
+                        "unit": "8px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "ticket-code": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "ticket-code": ["24px", { "lineHeight": "24px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        .ticket-perforation {
+            position: relative;
+        }
+        .ticket-perforation::before,
+        .ticket-perforation::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #f8f9ff; /* Matches background */
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        .ticket-perforation::before { left: -12px; }
+        .ticket-perforation::after { right: -12px; }
+
+        .barcode-container {
+            background-image: repeating-linear-gradient(90deg, #0b1c30, #0b1c30 2px, transparent 2px, transparent 4px, #0b1c30 4px, #0b1c30 5px, transparent 5px, transparent 8px);
+        }
+
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .animate-float {
+            animation: subtle-float 4s ease-in-out infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-container-padding py-stack-md bg-surface sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional high-resolution avatar of a young man with a friendly expression, styled in a modern corporate digital art aesthetic. The lighting is soft and even, highlighting clean lines and a vibrant primary blue background. The overall mood is reliable and welcoming, fitting for a premium logistics platform user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_O8M1O8S0u9pklNE9SnI4gXtGoidHm4LBvlDdKrOgco0ZE-BDdajTil_GMrYFJbPlY8W9G93FYTRV2u6AJLtQqjGUO96Blk-0dqCO7rfUjURXFViAQytHkvcY84HyyqgPHsPQ_b5irR0WtXmkQu5drp5iKGSpc4UIW1WWG942sJGg3kMJNT4FoHPMqr9_DpzSdOc6k4dBX00kWtLO8sM7a3oI7vPNlLKb1lzRP3hukKS1DatBqSBTsKLLyBcRrsTXZLmJ1tiuXm4"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-primary">Zutport</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-container-padding pt-stack-lg">
+<!-- Success Animation/Header -->
+<div class="text-center mb-stack-lg">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-tertiary-fixed text-on-tertiary-fixed mb-stack-md">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">Ticket Confirmed</h1>
+<p class="text-on-surface-variant font-body-sm">Show this barcode to the officer at the gate.</p>
+</div>
+<!-- Ticket Card -->
+<div class="bg-white rounded-xl shadow-lg overflow-hidden animate-float">
+<!-- Upper Part -->
+<div class="p-container-padding bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-stack-md">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Premium Class</span>
+<span class="text-on-surface-variant font-label-md">Flight ZP-402</span>
+</div>
+<div class="flex justify-between items-center mb-stack-lg">
+<div class="text-left">
+<p class="text-on-surface-variant font-label-md mb-1 uppercase tracking-tight">Origin</p>
+<h2 class="font-headline-md text-headline-md text-primary">Parung</h2>
+<p class="font-bold text-primary-fixed-variant">PRG</p>
+</div>
+<div class="flex flex-col items-center flex-grow px-4 opacity-40">
+<span class="material-symbols-outlined text-primary">flight_takeoff</span>
+<div class="w-full h-[1px] border-t-2 border-dashed border-primary mt-2"></div>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant font-label-md mb-1 uppercase tracking-tight">Destination</p>
+<h2 class="font-headline-md text-headline-md text-primary">Bogor</h2>
+<p class="font-bold text-primary-fixed-variant">BGR</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 py-stack-md border-t border-slate-100">
+<div>
+<p class="text-on-surface-variant font-label-md mb-1">Date</p>
+<p class="font-bold text-on-background text-body-md">24 Oct 23</p>
+</div>
+<div>
+<p class="text-on-surface-variant font-label-md mb-1">Boarding</p>
+<p class="font-bold text-on-background text-body-md">08:45 AM</p>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant font-label-md mb-1">Gate</p>
+<p class="font-bold text-on-background text-body-md">G-12</p>
+</div>
+</div>
+</div>
+<!-- Perforation Divider -->
+<div class="ticket-perforation h-8 flex items-center bg-surface-container-lowest">
+<div class="w-full border-t-2 border-dashed border-slate-200 mx-6"></div>
+</div>
+<!-- Lower Part -->
+<div class="p-container-padding bg-surface-container-low pt-2">
+<div class="grid grid-cols-2 gap-4 mb-stack-lg">
+<div>
+<p class="text-on-surface-variant font-label-md mb-1">Seat</p>
+<p class="font-bold text-primary text-headline-md">14A</p>
+</div>
+<div class="text-right">
+<p class="text-on-surface-variant font-label-md mb-1">Terminal</p>
+<p class="font-bold text-primary text-headline-md">T3C</p>
+</div>
+</div>
+<!-- Barcode Section -->
+<div class="bg-white p-4 rounded-lg flex flex-col items-center">
+<div class="w-full h-20 barcode-container mb-3 opacity-90"></div>
+<p class="font-ticket-code text-ticket-code text-on-background tracking-[0.3em]">9028347102</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-stack-lg space-y-stack-sm">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-md">
+<span class="material-symbols-outlined">download</span>
+                Save to Wallet
+            </button>
+<button class="w-full py-4 bg-transparent text-primary border-2 border-primary font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-surface-container-high active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">share</span>
+                Share Ticket
+            </button>
+</div>
+<!-- Helpful Info Card -->
+<div class="mt-stack-lg p-container-padding bg-surface-container-high rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">info</span>
+<div>
+<h4 class="font-bold text-on-background mb-1">Check-in Reminder</h4>
+<p class="text-body-sm text-on-surface-variant">Gate closes 15 minutes before departure. Please ensure you have your ID ready for verification.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-label-md text-label-md">Ticket</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors tap-highlight-transparent active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple interaction for barcode visibility
+        document.querySelector('.barcode-container').addEventListener('click', function() {
+            this.classList.toggle('opacity-100');
+            this.classList.toggle('opacity-90');
+        });
+    </script>
+</body></html>
