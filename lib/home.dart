@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:zutlemane/gap.dart';
 import 'package:zutlemane/hotel.dart';
 import 'package:zutlemane/ticket.dart';
 import 'package:zutlemane/utils.dart';
@@ -58,9 +58,9 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(12),
                   child: Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.search,
-                        color: Color(0xFFBFC205),
+                        color: Style.orangeColor,
                       ),
                       Text(
                         'Search',

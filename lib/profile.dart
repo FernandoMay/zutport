@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:zutlemane/gap.dart';
 import 'package:zutlemane/utils.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -20,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
                 height: AppLayout.getHeigth(95),
                 width: AppLayout.getWidth(95),
                 decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Style.kakiColor,
                     borderRadius: BorderRadius.circular(25),
                     image: const DecorationImage(
                         image: AssetImage('assets/images/img_1.png'))),
@@ -42,22 +42,22 @@ class ProfileScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xFFFEf4f3)),
+                        color: Style.bgColor),
                     child: Row(children: [
                       Container(
                         padding: const EdgeInsets.all(3),
                         decoration: const BoxDecoration(
-                            shape: BoxShape.circle, color: Color(0xFF526799)),
+                            shape: BoxShape.circle, color: Style.primaryColor),
                         child: Icon(
                           Icons.shield,
                           color: Colors.green[300],
                         ),
                       ),
                       Gap(AppLayout.getHeigth(8)),
-                      const Text(
+                      Text(
                         "Premium Status",
                         style: TextStyle(
-                            color: Color(0xFF526799),
+                            color: Style.primaryColor,
                             fontWeight: FontWeight.w600),
                       )
                     ]),
@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
                       color: Colors.transparent,
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: const Color(0xFF264CD2), width: 32)),
+                          color: Style.primaryColor, width: 32)),
                 ),
               ),
               Positioned(
@@ -116,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
                       color: Colors.transparent,
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: const Color(0xFF264CD2), width: 18)),
+                          color: Style.primaryColor, width: 18)),
                 ),
               ),
               Container(

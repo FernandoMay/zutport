@@ -1,6 +1,6 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:zutlemane/gap.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:zutlemane/utils.dart';
 import 'package:zutlemane/widgets.dart';
@@ -95,7 +95,7 @@ class TicketView extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(AppLayout.getHeigth(16)),
               decoration: BoxDecoration(
-                color: isColor == null ? const Color(0xFF526799) : Colors.white,
+                color: isColor == null ? Style.primaryColor : Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(AppLayout.getHeigth(21)),
                   topRight: const Radius.circular(21),
@@ -119,7 +119,7 @@ class TicketView extends StatelessWidget {
                           Icons.local_airport_rounded,
                           color: isColor == null
                               ? Colors.white
-                              : const Color(0xFF8ACCF7),
+                              : Style.primaryColor.withValues(alpha: 0.5),
                         ),
                       ),
                       const Spacer(),

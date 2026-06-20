@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:zutlemane/gap.dart';
 import 'package:zutlemane/utils.dart';
 
 class HotelScreen extends StatelessWidget {

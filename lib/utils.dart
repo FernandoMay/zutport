@@ -1,23 +1,28 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Style {
-  static Color primaryColor = const Color(0xFF687daf);
-  static Color textColor = const Color(0xFF3b3b3b);
-  static Color bgColor = const Color(0xFFeeedf2);
-  static Color orangeColor = const Color(0xFFF37B67);
-  static Color kakiColor = const Color(0xFFD2bdd6);
+  static const Color primaryColor = Color(0xFF00236f);
+  static const Color textColor = Color(0xFF1C1B1F);
+  static const Color bgColor = Color(0xFFf8f9ff);
+  static const Color orangeColor = Color(0xFF855300);
+  static const Color kakiColor = Color(0xFF00311f);
 
-  static TextStyle textStyle =
-      TextStyle(fontSize: 16, color: textColor, fontWeight: FontWeight.w500);
-  static TextStyle headLineStyle1 =
-      TextStyle(fontSize: 26, color: textColor, fontWeight: FontWeight.bold);
-  static TextStyle headLineStyle2 =
-      TextStyle(fontSize: 21, color: textColor, fontWeight: FontWeight.bold);
-  static TextStyle headLineStyle3 =
-      const TextStyle(fontSize: 17, fontWeight: FontWeight.w500);
-  static TextStyle headLineStyle4 = TextStyle(
-      fontSize: 14, color: Colors.grey.shade500, fontWeight: FontWeight.w500);
+  static TextStyle textStyle = GoogleFonts.inter(
+    fontSize: 16, color: textColor, fontWeight: FontWeight.w500,
+  );
+  static TextStyle headLineStyle1 = GoogleFonts.inter(
+    fontSize: 28, color: textColor, fontWeight: FontWeight.w600,
+  );
+  static TextStyle headLineStyle2 = GoogleFonts.inter(
+    fontSize: 22, color: textColor, fontWeight: FontWeight.w500,
+  );
+  static TextStyle headLineStyle3 = GoogleFonts.inter(
+    fontSize: 16, fontWeight: FontWeight.w400,
+  );
+  static TextStyle headLineStyle4 = GoogleFonts.inter(
+    fontSize: 14, color: Colors.grey.shade500, fontWeight: FontWeight.w500,
+  );
 }
 
 class AppLayout {
@@ -25,12 +30,20 @@ class AppLayout {
     return MediaQuery.of(context).size;
   }
 
-  static getScreenHeigth() {
-    return Get.height;
+  static double getScreenHeigth() {
+    final window = WidgetsBinding.instance.window;
+    final physical = window.physicalSize;
+    final dpr = window.devicePixelRatio;
+    if (physical.isEmpty || dpr == 0) return 0.0;
+    return physical.height / dpr;
   }
 
-  static getScreenWidth() {
-    return Get.width;
+  static double getScreenWidth() {
+    final window = WidgetsBinding.instance.window;
+    final physical = window.physicalSize;
+    final dpr = window.devicePixelRatio;
+    if (physical.isEmpty || dpr == 0) return 0.0;
+    return physical.width / dpr;
   }
 
   static getHeigth(double pixels) {

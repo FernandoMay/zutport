@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:zutlemane/gap.dart';
 import 'package:zutlemane/utils.dart';
 
 class ThickContainer extends StatelessWidget {
@@ -14,7 +14,7 @@ class ThickContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
             width: 2.5,
-            color: isColor == null ? Colors.white : const Color(0xFF8ACCF7)),
+            color: isColor == null ? Colors.white : Style.primaryColor.withValues(alpha: 0.5)),
       ),
     );
   }
@@ -40,7 +40,7 @@ class AppIconText extends StatelessWidget {
       child: Row(children: [
         Icon(
           icon,
-          color: Colors.blue,
+          color: Style.primaryColor,
         ),
         Gap(AppLayout.getWidth(10)),
         Text(

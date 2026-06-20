@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:zutlemane/gap.dart';
 import 'package:zutlemane/utils.dart';
 import 'package:zutlemane/widgets.dart';
 
@@ -43,7 +43,7 @@ class SearchScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(18),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12), color: Colors.blue),
+                  borderRadius: BorderRadius.circular(12), color: Style.primaryColor),
               child: Center(
                 child: Text(
                   'Find Tickets',
@@ -101,7 +101,7 @@ class SearchScreen extends StatelessWidget {
                           width: size.width * .44,
                           height: AppLayout.getHeigth(210),
                           decoration: BoxDecoration(
-                              color: const Color(0xFF3AB8B8),
+                              color: Style.kakiColor,
                               borderRadius: BorderRadius.circular(18)),
                           padding: EdgeInsets.symmetric(
                               horizontal: AppLayout.getHeigth(15),
@@ -137,7 +137,7 @@ class SearchScreen extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 border: Border.all(
                                   width: 18,
-                                  color: const Color(0xFF189999),
+                                  color: const Color(0xFF004a31),
                                 ),
                                 color: Colors.transparent),
                           ),
@@ -150,7 +150,7 @@ class SearchScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(15),
                       height: AppLayout.getHeigth(210),
                       decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: Style.orangeColor,
                           borderRadius: BorderRadius.circular(18)),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,

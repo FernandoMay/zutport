@@ -3,6 +3,7 @@ import 'package:zutlemane/home.dart';
 import 'package:zutlemane/profile.dart';
 import 'package:zutlemane/search.dart';
 import 'package:zutlemane/ticket.dart';
+import 'package:zutlemane/utils.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -36,9 +37,8 @@ class _BottomBarState extends State<BottomBar> {
         currentIndex: _selectedIndex,
         showSelectedLabels: true,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.blueGrey,
-        unselectedItemColor: const Color(0xFF526480),
-        // onTap: (value) => _onItemTapped(value),
+        selectedItemColor: Style.primaryColor,
+        unselectedItemColor: const Color(0xFF9E9E9E),
         onTap: _onItemTapped,
         items: const [
           BottomNavigationBarItem(
