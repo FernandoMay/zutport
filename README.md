@@ -1,57 +1,36 @@
-# Zutlemane (Zutport) — Travel Booking App
+# Zutlemane - Travel Booking App
 
-Prototipo de reserva de vuelos y hoteles con interfaz moderna, códigos de barras en tickets y seguimiento de millas. Construido con Flutter y GetX.
+A travel booking application built with Flutter and GetX.
 
-## Stack
+## Features
 
-| Capa | Tecnología |
-|------|-----------|
-| Framework | Flutter 3.x / Dart 3.x |
-| Estado | GetX (screen dimensions, plataforma) |
-| UI | Material Design personalizado |
-| Códigos de barras | barcode_widget (Code128) |
-| CI/CD | GitHub Actions (analyze + test) |
+- Flight search and booking
+- Hotel browsing
+- Ticket management with barcodes
+- User profile with miles tracking
+- Bottom navigation with 4 screens
 
-## Funcionalidades
+## Architecture
 
-- Pantalla de inicio con saludo, búsqueda, vuelos próximos y hoteles recomendados
-- Búsqueda de vuelos/hoteles con campos de origen/destino y promociones
-- Tickets detallados con código de barras Code128
-- Perfil de usuario con insignia premium, notificaciones y acumulación de millas
-- Barra de navegación inferior con 4 tabs: Home, Search, Ticket, Profile
-- Datos hardcoded de ejemplo (2 vuelos, 3 hoteles, historial de millas)
+- **State Management:** GetX
+- **UI:** Custom widgets with theme support
+- **Data:** Hardcoded seed data
 
-## Estructura
+## Getting Started
 
-```
-lib/
-├── main.dart           # Entry point + tema
-├── bottom.dart         # Barra de navegación inferior
-├── home.dart           # Pantalla de inicio
-├── search.dart         # Búsqueda de vuelos/hoteles
-├── ticket.dart         # Detalle de ticket con barcode
-├── hotel.dart          # Widget de hotel
-├── profile.dart        # Perfil y millas
-├── utils.dart          # Constantes + datos hardcoded
-└── widgets.dart        # Componentes reutilizables
-```
+1. Clone the repository
+2. Run `flutter pub get`
+3. Run `flutter run`
 
-## Inicio rápido
-
-```bash
-flutter pub get
-flutter run
-```
-
-## Pruebas
+## Testing
 
 ```bash
 flutter test
 ```
 
-## Notas
+## Build
 
-- Prototipo UI — datos hardcoded, sin backend ni API real
-- Código de barras funcional con barcode_widget
-- Imágenes de assets referenciadas pero no incluidas (`assets/images/`)
-- Usa ciudades de Indonesia como ejemplo (Parung, Bogor, Sukabumi)
+```bash
+flutter build apk
+flutter build ios
+```
